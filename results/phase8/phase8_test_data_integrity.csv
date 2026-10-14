@@ -1,0 +1,2 @@
+sample_count_match,feature_count_match,missing_values,infinite_values,duplicate_rows,valid_labels,missing_classes,all_features_numeric,overall_integrity
+True,True,0,0,589,True,0,True,True

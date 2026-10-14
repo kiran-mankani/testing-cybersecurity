@@ -1,0 +1,11 @@
+{
+    "total_classes": 28,
+    "excellent_classes": 21,
+    "good_classes": 0,
+    "moderate_classes": 4,
+    "poor_classes": 3,
+    "mean_f1": 0.836975603771025,
+    "median_f1": 0.9897643097643098,
+    "lowest_f1_class": "ftp_write",
+    "lowest_f1_score": 0.0
+}

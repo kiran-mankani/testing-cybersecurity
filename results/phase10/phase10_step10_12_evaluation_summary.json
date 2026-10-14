@@ -1,0 +1,21 @@
+{
+    "step": "Phase 10 \u2014 Step 10.12",
+    "test_samples": 29696,
+    "selected_candidate": "phase10_targeted_weight_xgboost_candidate.pkl",
+    "comparison_model": "phase9_selected_xgboost_candidate.pkl",
+    "targeted_model_test_metrics": {
+        "model": "Targeted Rare-Class-Weighted XGBoost",
+        "accuracy": 0.9964978448275862,
+        "balanced_accuracy": 0.8672944686950254,
+        "macro_precision": 0.829723933996679,
+        "macro_recall": 0.8672944686950254,
+        "macro_f1": 0.8381648544519675,
+        "weighted_f1": 0.9966687914494777,
+        "mcc": 0.994300341861119,
+        "cohen_kappa": 0.9942959599859779,
+        "correct_predictions": 29592,
+        "incorrect_predictions": 104
+    },
+    "important_limitation": "This test dataset was already evaluated in Phase 8; results are not an untouched independent final evaluation.",
+    "deployment_status": "Offline evaluation only; not production-approved"
+}

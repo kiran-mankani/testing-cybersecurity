@@ -1,0 +1,27 @@
+attack,best_f1,best_models,number_of_tied_models
+apache2,1.0,Original XGBoost | Standard Weighted XGBoost | Targeted Weighted XGBoost,3
+back,1.0,Original XGBoost | Standard Weighted XGBoost | Targeted Weighted XGBoost,3
+buffer_overflow,0.9411764705882353,Original XGBoost,1
+ftp_write,0.6666666666666666,Standard Weighted XGBoost | Targeted Weighted XGBoost,2
+guess_passwd,0.9946524064171123,Targeted Weighted XGBoost,1
+httptunnel,1.0,Original XGBoost | Standard Weighted XGBoost | Targeted Weighted XGBoost,3
+imap,1.0,Original XGBoost | Standard Weighted XGBoost | Targeted Weighted XGBoost,3
+ipsweep,0.9969418960244648,Original XGBoost,1
+land,0.7272727272727273,Original XGBoost | Standard Weighted XGBoost | Targeted Weighted XGBoost,3
+loadmodule,0.6666666666666666,Original XGBoost,1
+mailbomb,1.0,Original XGBoost | Standard Weighted XGBoost,2
+mscan,0.9516129032258065,Standard Weighted XGBoost,1
+neptune,0.9998433338555538,Original XGBoost,1
+nmap,0.9897810218978103,Standard Weighted XGBoost | Targeted Weighted XGBoost,2
+normal,0.998568929877564,Original XGBoost,1
+pod,0.9690721649484536,Original XGBoost,1
+portsweep,0.9984871406959153,Original XGBoost | Standard Weighted XGBoost | Targeted Weighted XGBoost,3
+processtable,0.9882352941176471,Original XGBoost | Standard Weighted XGBoost | Targeted Weighted XGBoost,3
+saint,0.7368421052631579,Targeted Weighted XGBoost,1
+satan,0.9861751152073732,Original XGBoost,1
+smurf,0.9992144540455616,Original XGBoost | Standard Weighted XGBoost | Targeted Weighted XGBoost,3
+snmpgetattack,0.7,Original XGBoost,1
+snmpguess,1.0,Original XGBoost,1
+teardrop,0.995,Standard Weighted XGBoost | Targeted Weighted XGBoost,2
+warezclient,0.995,Targeted Weighted XGBoost,1
+warezmaster,0.95,Original XGBoost,1

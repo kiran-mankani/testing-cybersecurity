@@ -1,0 +1,79 @@
+{
+    "evaluation_note": "The test set was previously evaluated in Phase 8. This is a repeated evaluation, not a completely untouched test evaluation.",
+    "original_xgboost": {
+        "model": "Original XGBoost",
+        "accuracy": 0.9975417564655172,
+        "balanced_accuracy": 0.8408150310426669,
+        "macro_precision": 0.8441944028540106,
+        "macro_recall": 0.8408150310426669,
+        "macro_f1": 0.8369756037710249,
+        "weighted_f1": 0.9974493416146034,
+        "mcc": 0.9959891192249946,
+        "cohen_kappa": 0.9959888934835464,
+        "correct_predictions": 29623,
+        "incorrect_predictions": 73
+    },
+    "class_weighted_xgboost": {
+        "model": "Class-Weighted XGBoost",
+        "accuracy": 0.9963968211206896,
+        "balanced_accuracy": 0.8652374945859529,
+        "macro_precision": 0.8247400112664015,
+        "macro_recall": 0.8652374945859529,
+        "macro_f1": 0.8345877315396407,
+        "weighted_f1": 0.9965149740035172,
+        "mcc": 0.9941343854109851,
+        "cohen_kappa": 0.9941306933058315,
+        "correct_predictions": 29589,
+        "incorrect_predictions": 107
+    },
+    "metric_changes": [
+        {
+            "metric": "accuracy",
+            "original_xgboost": 0.9975417564655172,
+            "class_weighted_xgboost": 0.9963968211206896,
+            "change": -0.0011449353448276245
+        },
+        {
+            "metric": "balanced_accuracy",
+            "original_xgboost": 0.8408150310426669,
+            "class_weighted_xgboost": 0.8652374945859529,
+            "change": 0.024422463543286033
+        },
+        {
+            "metric": "macro_precision",
+            "original_xgboost": 0.8441944028540106,
+            "class_weighted_xgboost": 0.8247400112664015,
+            "change": -0.019454391587609088
+        },
+        {
+            "metric": "macro_recall",
+            "original_xgboost": 0.8408150310426669,
+            "class_weighted_xgboost": 0.8652374945859529,
+            "change": 0.024422463543286033
+        },
+        {
+            "metric": "macro_f1",
+            "original_xgboost": 0.8369756037710249,
+            "class_weighted_xgboost": 0.8345877315396407,
+            "change": -0.002387872231384147
+        },
+        {
+            "metric": "weighted_f1",
+            "original_xgboost": 0.9974493416146034,
+            "class_weighted_xgboost": 0.9965149740035172,
+            "change": -0.0009343676110862287
+        },
+        {
+            "metric": "mcc",
+            "original_xgboost": 0.9959891192249946,
+            "class_weighted_xgboost": 0.9941343854109851,
+            "change": -0.0018547338140094682
+        },
+        {
+            "metric": "cohen_kappa",
+            "original_xgboost": 0.9959888934835464,
+            "class_weighted_xgboost": 0.9941306933058315,
+            "change": -0.0018582001777148749
+        }
+    ]
+}

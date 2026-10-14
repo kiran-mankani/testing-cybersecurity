@@ -1,0 +1,18 @@
+{
+    "phase": 10,
+    "step": "10.2",
+    "model": "Class-Weighted XGBoost",
+    "test_samples": 29696,
+    "test_features": 41,
+    "classes_evaluated": 28,
+    "accuracy": 0.9963968211206896,
+    "balanced_accuracy": 0.8652374945859529,
+    "macro_precision": 0.8247400112664015,
+    "macro_recall": 0.8652374945859529,
+    "macro_f1": 0.8345877315396407,
+    "weighted_f1": 0.9965149740035172,
+    "mcc": 0.9941343854109851,
+    "cohen_kappa": 0.9941306933058315,
+    "correct_predictions": 29589,
+    "incorrect_predictions": 107
+}

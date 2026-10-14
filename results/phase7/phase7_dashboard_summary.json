@@ -1,0 +1,113 @@
+{
+    "model": "XGBClassifier",
+    "test_samples": 29696,
+    "number_of_classes": 28,
+    "accuracy": 0.9975417564655172,
+    "balanced_accuracy": 0.8408150310426669,
+    "macro_f1": 0.8369756037710249,
+    "weighted_f1": 0.9974493416146034,
+    "weakest_classes": [
+        {
+            "Attack_Class": "ftp_write",
+            "F1_Score": 0.0,
+            "Support": 2
+        },
+        {
+            "Attack_Class": "multihop",
+            "F1_Score": 0.0,
+            "Support": 3
+        },
+        {
+            "Attack_Class": "rootkit",
+            "F1_Score": 0.0,
+            "Support": 3
+        },
+        {
+            "Attack_Class": "saint",
+            "F1_Score": 0.5945945945945946,
+            "Support": 19
+        },
+        {
+            "Attack_Class": "loadmodule",
+            "F1_Score": 0.6666666666666666,
+            "Support": 2
+        },
+        {
+            "Attack_Class": "snmpgetattack",
+            "F1_Score": 0.7,
+            "Support": 9
+        },
+        {
+            "Attack_Class": "land",
+            "F1_Score": 0.7272727272727273,
+            "Support": 4
+        },
+        {
+            "Attack_Class": "buffer_overflow",
+            "F1_Score": 0.9411764705882353,
+            "Support": 9
+        },
+        {
+            "Attack_Class": "warezmaster",
+            "F1_Score": 0.95,
+            "Support": 60
+        },
+        {
+            "Attack_Class": "mscan",
+            "F1_Score": 0.95,
+            "Support": 62
+        }
+    ],
+    "top_error_patterns": [
+        {
+            "Actual_Class": "saint",
+            "Predicted_Class": "satan",
+            "Error_Count": 7
+        },
+        {
+            "Actual_Class": "satan",
+            "Predicted_Class": "saint",
+            "Error_Count": 7
+        },
+        {
+            "Actual_Class": "normal",
+            "Predicted_Class": "satan",
+            "Error_Count": 4
+        },
+        {
+            "Actual_Class": "normal",
+            "Predicted_Class": "snmpgetattack",
+            "Error_Count": 4
+        },
+        {
+            "Actual_Class": "nmap",
+            "Predicted_Class": "ipsweep",
+            "Error_Count": 4
+        },
+        {
+            "Actual_Class": "satan",
+            "Predicted_Class": "normal",
+            "Error_Count": 3
+        },
+        {
+            "Actual_Class": "normal",
+            "Predicted_Class": "pod",
+            "Error_Count": 3
+        },
+        {
+            "Actual_Class": "normal",
+            "Predicted_Class": "land",
+            "Error_Count": 3
+        },
+        {
+            "Actual_Class": "warezmaster",
+            "Predicted_Class": "normal",
+            "Error_Count": 3
+        },
+        {
+            "Actual_Class": "teardrop",
+            "Predicted_Class": "normal",
+            "Error_Count": 2
+        }
+    ]
+}

@@ -1,0 +1,77 @@
+PHASE 10 — STEP 10.4: MODEL CONSISTENCY AUDIT
+======================================================================
+
+Test samples: 29,696
+
+AUDIT CHECKS
+--------------------------------------------------
+prediction_row_counts_match: PASS
+actual_labels_match: PASS
+weighted_predictions_match: PASS
+correctness_flags_match: PASS
+step102_metrics_match_recomputed_metrics: PASS
+step102_matches_step103_weighted_metrics: PASS
+classwise_f1_changes_match: PASS
+
+OVERALL AUDIT STATUS: PASS
+
+METRICS AUDIT
+--------------------------------------------------
+               metric  step102_saved  recomputed_from_predictions  absolute_difference  match
+             accuracy       0.996397                     0.996397                  0.0   True
+    balanced_accuracy       0.865237                     0.865237                  0.0   True
+      macro_precision       0.824740                     0.824740                  0.0   True
+         macro_recall       0.865237                     0.865237                  0.0   True
+             macro_f1       0.834588                     0.834588                  0.0   True
+          weighted_f1       0.996515                     0.996515                  0.0   True
+                  mcc       0.994134                     0.994134                  0.0   True
+          cohen_kappa       0.994131                     0.994131                  0.0   True
+  correct_predictions   29589.000000                 29589.000000                  0.0   True
+incorrect_predictions     107.000000                   107.000000                  0.0   True
+
+STEP 10.2 VS STEP 10.3
+--------------------------------------------------
+           metric  step102_value  step103_weighted_value  absolute_difference  match
+         accuracy       0.996397                0.996397         0.000000e+00   True
+balanced_accuracy       0.865237                0.865237         0.000000e+00   True
+  macro_precision       0.824740                0.824740         0.000000e+00   True
+     macro_recall       0.865237                0.865237         0.000000e+00   True
+         macro_f1       0.834588                0.834588         0.000000e+00   True
+      weighted_f1       0.996515                0.996515         0.000000e+00   True
+              mcc       0.994134                0.994134         1.110223e-16   True
+      cohen_kappa       0.994131                0.994131         1.110223e-16   True
+
+CLASS-WISE F1 AUDIT
+--------------------------------------------------
+          class  support   old_f1   new_f1  saved_f1_change  recomputed_f1_change  match
+        apache2       46 1.000000 1.000000         0.000000              0.000000   True
+           back      237 1.000000 1.000000         0.000000              0.000000   True
+buffer_overflow        9 0.941176 0.800000        -0.141176             -0.141176   True
+      ftp_write        2 0.000000 0.666667         0.666667              0.666667   True
+   guess_passwd       93 0.994595 0.989362        -0.005233             -0.005233   True
+     httptunnel        8 1.000000 1.000000         0.000000              0.000000   True
+           imap        2 1.000000 1.000000         0.000000              0.000000   True
+        ipsweep      816 0.996942 0.995092        -0.001850             -0.001850   True
+           land        4 0.727273 0.727273         0.000000              0.000000   True
+     loadmodule        2 0.666667 0.400000        -0.266667             -0.266667   True
+       mailbomb       19 1.000000 1.000000         0.000000              0.000000   True
+          mscan       62 0.950000 0.951613         0.001613              0.001613   True
+       multihop        3 0.000000 0.000000         0.000000              0.000000   True
+        neptune     9574 0.999843 0.999739        -0.000104             -0.000104   True
+           nmap      340 0.989630 0.989781         0.000151              0.000151   True
+         normal    15718 0.998569 0.997419        -0.001150             -0.001150   True
+            pod       47 0.969072 0.959184        -0.009888             -0.009888   True
+      portsweep      660 0.998483 0.998485         0.000002              0.000002   True
+   processtable       42 0.988235 0.988235         0.000000              0.000000   True
+        rootkit        3 0.000000 0.000000         0.000000              0.000000   True
+          saint       19 0.594595 0.666667         0.072072              0.072072   True
+          satan      866 0.986175 0.983381        -0.002794             -0.002794   True
+          smurf      637 0.999214 0.999214         0.000000              0.000000   True
+  snmpgetattack        9 0.700000 0.411765        -0.288235             -0.288235   True
+      snmpguess       20 1.000000 0.930233        -0.069767             -0.069767   True
+       teardrop      199 0.989899 0.995000         0.005101              0.005101   True
+    warezclient      199 0.994949 0.992519        -0.002431             -0.002431   True
+    warezmaster       60 0.950000 0.926829        -0.023171             -0.023171   True
+
+NOTE
+The test set was evaluated in Phase 8 and reused in Phase 10. This audit verifies consistency of saved outputs; it does not establish performance on a new, untouched dataset.

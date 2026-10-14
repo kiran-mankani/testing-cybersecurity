@@ -1,0 +1,38 @@
+{
+    "phase": 10,
+    "step": "10.5",
+    "audit_passed": true,
+    "original_xgboost": {
+        "accuracy": 0.9975417564655172,
+        "balanced_accuracy": 0.8408150310426669,
+        "macro_f1": 0.8369756037710249,
+        "incorrect_predictions": 73
+    },
+    "class_weighted_xgboost": {
+        "accuracy": 0.9963968211206896,
+        "balanced_accuracy": 0.8652374945859529,
+        "macro_f1": 0.8345877315396407,
+        "incorrect_predictions": 107
+    },
+    "metric_winners": {
+        "accuracy": "Original XGBoost",
+        "balanced_accuracy": "Class-Weighted XGBoost",
+        "macro_precision": "Original XGBoost",
+        "macro_recall": "Class-Weighted XGBoost",
+        "macro_f1": "Original XGBoost",
+        "weighted_f1": "Original XGBoost",
+        "mcc": "Original XGBoost",
+        "cohen_kappa": "Original XGBoost"
+    },
+    "model_decision": "No universal winner. Original XGBoost performs better on overall accuracy and macro F1, while Class-Weighted XGBoost performs better on balanced accuracy and macro recall. Select a deployment candidate only after deciding the acceptable trade-off between missed attacks and false-positive alerts.",
+    "classes_needing_attention": [
+        "ftp_write",
+        "loadmodule",
+        "multihop",
+        "rootkit",
+        "saint",
+        "snmpgetattack"
+    ],
+    "test_set_limitation": "The test set was evaluated in Phase 8 and reused in Phase 10. These results are not an independent evaluation on a new untouched test set.",
+    "operational_limitation": "Offline classification results do not prove real-time network detection or automatic threat prevention."
+}

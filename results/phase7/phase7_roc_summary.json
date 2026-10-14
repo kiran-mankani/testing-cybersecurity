@@ -1,0 +1,7 @@
+{
+    "model": "XGBClassifier",
+    "valid_class_count": 28,
+    "skipped_class_count": 0,
+    "macro_auc_valid_classes": 0.9979824595491514,
+    "weighted_auc_valid_classes": 0.9999593123531472
+}

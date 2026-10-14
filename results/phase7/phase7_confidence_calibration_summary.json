@@ -1,0 +1,14 @@
+{
+    "model": "XGBClassifier",
+    "test_samples": 29696,
+    "correct_predictions": 29623,
+    "incorrect_predictions": 73,
+    "mean_confidence_correct": 0.9988763332366943,
+    "mean_confidence_incorrect": 0.7912572026252747,
+    "multiclass_mean_ovr_brier_score": 0.0001364939501168497,
+    "high_confidence_error_threshold": 0.9,
+    "high_confidence_error_count": 31,
+    "top_1_accuracy": 0.9975417564655172,
+    "top_3_accuracy": 0.9997306034482759,
+    "top_5_accuracy": 0.9998316271551724
+}

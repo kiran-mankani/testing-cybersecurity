@@ -1,0 +1,272 @@
+================================================================================
+PHASE 5 — EXPLAINABLE AI (XAI) REPORT
+================================================================================
+
+PROJECT: Smart Cybersecurity Using Machine Learning
+PURPOSE: Intrusion Detection and Threat Prevention
+Generated on: 2026-10-12 14:22:03
+
+1. PHASE OVERVIEW
+--------------------------------------------------------------------------------
+This report summarizes the saved outputs from Phase 5, including
+model evaluation, feature importance, SHAP, LIME, and error analysis.
+
+2. GENERATED CSV RESULTS
+--------------------------------------------------------------------------------
+
+File: phase5_artifact_verification.csv
+Rows: 16
+Columns: 3
+Column names: File, Status, Size_KB
+Preview:
+                                File Status  Size_KB
+       phase5_feature_importance.csv  FOUND     1.08
+ phase5_feature_importance_named.csv  FOUND     1.69
+phase5_feature_importance_weight.csv  FOUND     0.62
+  phase5_feature_importance_gain.csv  FOUND     1.08
+ phase5_feature_importance_cover.csv  FOUND     1.06
+
+File: phase5_attack_class_analysis.csv
+Rows: 28
+Columns: 5
+Column names: Attack, Precision, Recall, F1, Support
+Preview:
+    Attack  Precision   Recall       F1  Support
+ ftp_write   0.000000 0.000000 0.000000        2
+  multihop   0.000000 0.000000 0.000000        3
+   rootkit   0.000000 0.000000 0.000000        3
+     saint   0.611111 0.578947 0.594595       19
+loadmodule   1.000000 0.500000 0.666667        2
+
+File: phase5_confusion_matrix.csv
+Rows: 28
+Columns: 29
+Column names: Unnamed: 0, apache2, back, buffer_overflow, ftp_write, guess_passwd, httptunnel, imap, ipsweep, land, loadmodule, mailbomb, mscan, multihop, neptune, nmap, normal, pod, portsweep, processtable, rootkit, saint, satan, smurf, snmpgetattack, snmpguess, teardrop, warezclient, warezmaster
+Preview:
+     Unnamed: 0  apache2  back  buffer_overflow  ftp_write  guess_passwd  httptunnel  imap  ipsweep  land  loadmodule  mailbomb  mscan  multihop  neptune  nmap  normal  pod  portsweep  processtable  rootkit  saint  satan  smurf  snmpgetattack  snmpguess  teardrop  warezclient  warezmaster
+        apache2       46     0                0          0             0           0     0        0     0           0         0      0         0        0     0       0    0          0             0        0      0      0      0              0          0         0            0            0
+           back        0   237                0          0             0           0     0        0     0           0         0      0         0        0     0       0    0          0             0        0      0      0      0              0          0         0            0            0
+buffer_overflow        0     0                8          0             0           0     0        0     0           0         0      0         0        0     0       1    0          0             0        0      0      0      0              0          0         0            0            0
+      ftp_write        0     0                0          0             0           0     0        0     0           0         0      0         0        0     0       2    0          0             0        0      0      0      0              0          0         0            0            0
+   guess_passwd        0     0                0          0            92           0     0        0     0           0         0      0         0        0     0       1    0          0             0        0      0      0      0              0          0         0            0            0
+
+File: phase5_errors_by_actual_class.csv
+Rows: 19
+Columns: 2
+Column names: Actual_Class, Misclassified_Count
+Preview:
+Actual_Class  Misclassified_Count
+      normal                   18
+       satan                   10
+       saint                    8
+        nmap                    6
+       mscan                    5
+
+File: phase5_feature_importance.csv
+Rows: 41
+Columns: 3
+Column names: Feature, Feature_Name, Importance
+Preview:
+Feature Feature_Name  Importance
+     f6           f6  698.815613
+     f8           f8  587.063843
+    f28          f28  465.742889
+     f7           f7  365.454193
+    f10          f10  349.490631
+
+File: phase5_feature_importance_cover.csv
+Rows: 41
+Columns: 3
+Column names: Feature, Feature_Name, Importance
+Preview:
+Feature Feature_Name  Importance
+     f6           f6 1730.943237
+    f28          f28 1234.588013
+    f10          f10 1227.205566
+     f7           f7  938.260376
+    f29          f29  854.731445
+
+File: phase5_feature_importance_gain.csv
+Rows: 41
+Columns: 3
+Column names: Feature, Feature_Name, Importance
+Preview:
+Feature Feature_Name  Importance
+     f6           f6  698.815613
+     f8           f8  587.063843
+    f28          f28  465.742889
+     f7           f7  365.454193
+    f10          f10  349.490631
+
+File: phase5_feature_importance_named.csv
+Rows: 41
+Columns: 4
+Column names: Feature, Feature_Name, Importance, Original_Feature
+Preview:
+Feature Feature_Name  Importance  Original_Feature
+     f6           f6  698.815613              land
+     f8           f8  587.063843            urgent
+    f28          f28  465.742889     same_srv_rate
+     f7           f7  365.454193    wrong_fragment
+    f10          f10  349.490631 num_failed_logins
+
+File: phase5_feature_importance_total_gain.csv
+Rows: 41
+Columns: 3
+Column names: Feature, Feature_Name, Importance
+Preview:
+Feature Feature_Name    Importance
+     f4           f4 463956.593750
+    f28          f28 270596.625000
+     f5           f5 112092.812500
+     f2           f2 108965.476562
+    f32          f32 105310.578125
+
+File: phase5_feature_importance_weight.csv
+Rows: 41
+Columns: 3
+Column names: Feature, Feature_Name, Importance
+Preview:
+Feature Feature_Name  Importance
+     f4           f4      4752.0
+    f32          f32      4326.0
+     f2           f2      3299.0
+    f31          f31      3213.0
+     f5           f5      2928.0
+
+File: phase5_final_summary.csv
+Rows: 6
+Columns: 2
+Column names: Item, Result
+Preview:
+                   Item    Result
+Attack classes analyzed        28
+  Misclassified records        73
+  Unique error patterns        36
+     Feature importance Completed
+       LIME explanation Completed
+
+File: phase5_lime_individual_explanation.csv
+Rows: 15
+Columns: 6
+Column names: Sample_Index, Feature_Condition, LIME_Weight, Actual_Class, Predicted_Class, Prediction_Confidence
+Preview:
+ Sample_Index  Feature_Condition  LIME_Weight Actual_Class Predicted_Class  Prediction_Confidence
+            0  feature_4 <= 0.00     0.255613       normal          normal               0.999987
+            0  feature_9 <= 0.00     0.154305       normal          normal               0.999987
+            0  feature_11 > 1.00     0.125781       normal          normal               0.999987
+            0  feature_33 > 1.00     0.125781       normal          normal               0.999987
+            0 feature_15 <= 0.00     0.109734       normal          normal               0.999987
+
+File: phase5_lime_individual_explanation_named.csv
+Rows: 15
+Columns: 7
+Column names: Sample_Index, Feature_Condition, LIME_Weight, Actual_Class, Predicted_Class, Prediction_Confidence, Original_Feature_Condition
+Preview:
+ Sample_Index  Feature_Condition  LIME_Weight Actual_Class Predicted_Class  Prediction_Confidence    Original_Feature_Condition
+            0  feature_4 <= 0.00     0.255613       normal          normal               0.999987             src_bytes <= 0.00
+            0  feature_9 <= 0.00     0.154305       normal          normal               0.999987                   hot <= 0.00
+            0  feature_11 > 1.00     0.125781       normal          normal               0.999987              logged_in > 1.00
+            0  feature_33 > 1.00     0.125781       normal          normal               0.999987 dst_host_same_srv_rate > 1.00
+            0 feature_15 <= 0.00     0.109734       normal          normal               0.999987              num_root <= 0.00
+
+File: phase5_misclassification_patterns.csv
+Rows: 36
+Columns: 3
+Column names: Actual_Class, Predicted_Class, Count
+Preview:
+Actual_Class Predicted_Class  Count
+       saint           satan      7
+       satan           saint      7
+      normal           satan      4
+      normal   snmpgetattack      4
+        nmap         ipsweep      4
+
+File: phase5_misclassified_records.csv
+Rows: 73
+Columns: 3
+Column names: Test_Index, Actual_Class, Predicted_Class
+Preview:
+ Test_Index  Actual_Class Predicted_Class
+        138 snmpgetattack          normal
+       1404 snmpgetattack          normal
+       1472         saint           satan
+       2366         saint          normal
+       2440        normal             pod
+
+File: phase5_per_class_performance.csv
+Rows: 28
+Columns: 5
+Column names: Attack, Precision, Recall, F1, Support
+Preview:
+    Attack  Precision  Recall  F1  Support
+   apache2        1.0     1.0 1.0       46
+      back        1.0     1.0 1.0      237
+      imap        1.0     1.0 1.0        2
+httptunnel        1.0     1.0 1.0        8
+  mailbomb        1.0     1.0 1.0       19
+
+File: phase5_shap_global_importance.csv
+Rows: 41
+Columns: 2
+Column names: Feature, Mean_Absolute_SHAP
+Preview:
+           Feature  Mean_Absolute_SHAP
+         src_bytes            0.832350
+           service            0.560725
+dst_host_srv_count            0.415512
+         dst_bytes            0.397920
+    dst_host_count            0.342627
+
+File: xgboost_feature_importance.csv
+Rows: 41
+Columns: 2
+Column names: feature, gain_importance
+Preview:
+   feature  gain_importance
+ feature_6       698.815613
+ feature_8       587.063843
+feature_28       465.742889
+ feature_7       365.454193
+feature_10       349.490631
+
+3. GENERATED VISUALIZATIONS AND OTHER ARTIFACTS
+--------------------------------------------------------------------------------
+phase5_artifact_verification.csv (787 bytes)
+phase5_attack_class_analysis.csv (1,348 bytes)
+phase5_confusion_matrix.csv (2,122 bytes)
+phase5_confusion_matrix.png (1,363,918 bytes)
+phase5_errors_by_actual_class.csv (269 bytes)
+phase5_feature_importance.csv (1,107 bytes)
+phase5_feature_importance_cover.csv (1,084 bytes)
+phase5_feature_importance_gain.csv (1,107 bytes)
+phase5_feature_importance_named.csv (1,729 bytes)
+phase5_feature_importance_top20.png (107,668 bytes)
+phase5_feature_importance_total_gain.csv (970 bytes)
+phase5_feature_importance_weight.csv (631 bytes)
+phase5_final_summary.csv (192 bytes)
+phase5_lime_individual_explanation.csv (1,229 bytes)
+phase5_lime_individual_explanation.png (118,013 bytes)
+phase5_lime_individual_explanation_named.csv (1,600 bytes)
+phase5_misclassification_patterns.csv (707 bytes)
+phase5_misclassified_records.csv (1,619 bytes)
+phase5_per_class_performance.csv (1,348 bytes)
+phase5_shap_global_importance.csv (1,120 bytes)
+phase5_shap_global_importance.png (184,440 bytes)
+xgboost_feature_importance.csv (1,232 bytes)
+
+4. ARTIFACT SUMMARY
+--------------------------------------------------------------------------------
+CSV files found: 18
+Total files found: 22
+
+5. CONCLUSION
+--------------------------------------------------------------------------------
+This report was generated automatically from the Phase 5 results folder.
+The CSV previews and artifact list reflect files available at generation time.
+For updated metrics, rerun the Phase 5 analysis cells before generating
+this report again.
+
+================================================================================
+END OF PHASE 5 REPORT
+================================================================================

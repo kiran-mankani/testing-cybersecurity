@@ -1,0 +1,7 @@
+PHASE 9 — STEP 9.2.1: OVERLAPPING ROW LABEL VERIFICATION
+Exact overlapping test rows: 5094
+Overlapping rows with a matching label: 5086
+Overlapping rows with no matching training label: 8
+Training patterns with multiple labels: 2
+
+Interpret these results in the context of the dataset and split procedure.

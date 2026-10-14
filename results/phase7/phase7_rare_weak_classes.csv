@@ -1,0 +1,4 @@
+Attack_Class,Precision,Recall,F1_Score,Support,Log10_Support
+ftp_write,0.0,0.0,0.0,2,0.3010299956639812
+multihop,0.0,0.0,0.0,3,0.47712125471966244
+rootkit,0.0,0.0,0.0,3,0.47712125471966244

@@ -1,0 +1,52 @@
+================================================================================
+PHASE 6 — AUTOMATED THREAT RESPONSE REPORT
+================================================================================
+
+1. SYSTEM OVERVIEW
+--------------------------------------------------------------------------------
+This report summarizes simulated intrusion detection, severity classification, and recommended response actions.
+
+2. TOTAL EVENTS
+--------------------------------------------------------------------------------
+Total simulated events: 10
+
+3. ATTACK DISTRIBUTION
+--------------------------------------------------------------------------------
+apache2: 7
+normal: 3
+
+4. SEVERITY DISTRIBUTION
+--------------------------------------------------------------------------------
+Low: 3
+Medium: 7
+High: 0
+Critical: 0
+
+5. RESPONSE DISTRIBUTION
+--------------------------------------------------------------------------------
+Alert: 7
+Monitor: 3
+
+6. RESPONSE POLICY
+--------------------------------------------------------------------------------
+Low -> Monitor: Continue monitoring the traffic and record the event.
+Medium -> Alert: Generate an alert and increase monitoring.
+High -> Investigate: Trigger an investigation and consider temporary containment.
+Critical -> Immediate Response: Trigger immediate incident response and prioritize containment.
+
+7. INCIDENT DETAILS
+--------------------------------------------------------------------------------
+Event 1: Attack=apache2, Severity=Medium, Response=Alert
+Event 2: Attack=normal, Severity=Low, Response=Monitor
+Event 3: Attack=apache2, Severity=Medium, Response=Alert
+Event 4: Attack=apache2, Severity=Medium, Response=Alert
+Event 5: Attack=apache2, Severity=Medium, Response=Alert
+Event 6: Attack=normal, Severity=Low, Response=Monitor
+Event 7: Attack=apache2, Severity=Medium, Response=Alert
+Event 8: Attack=apache2, Severity=Medium, Response=Alert
+Event 9: Attack=apache2, Severity=Medium, Response=Alert
+Event 10: Attack=normal, Severity=Low, Response=Monitor
+
+8. CONCLUSION
+--------------------------------------------------------------------------------
+The simulated threat response system successfully maps detected attack classes to severity levels and recommended response actions.

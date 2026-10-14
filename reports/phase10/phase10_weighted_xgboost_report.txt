@@ -1,0 +1,61 @@
+PHASE 10 — STEP 10.2: FINAL TEST EVALUATION
+=================================================================
+
+Model: Class-Weighted XGBoost
+Prediction input: Unscaled encoded test features
+
+OVERALL METRICS
+----------------------------------------
+phase: 10
+step: 10.2
+model: Class-Weighted XGBoost
+test_samples: 29696
+test_features: 41
+classes_evaluated: 28
+accuracy: 0.9963968211206896
+balanced_accuracy: 0.8652374945859529
+macro_precision: 0.8247400112664015
+macro_recall: 0.8652374945859529
+macro_f1: 0.8345877315396407
+weighted_f1: 0.9965149740035172
+mcc: 0.9941343854109851
+cohen_kappa: 0.9941306933058315
+correct_predictions: 29589
+incorrect_predictions: 107
+
+CLASSIFICATION REPORT
+----------------------------------------
+                 precision    recall  f1-score   support
+
+        apache2       1.00      1.00      1.00        46
+           back       1.00      1.00      1.00       237
+buffer_overflow       0.73      0.89      0.80         9
+      ftp_write       1.00      0.50      0.67         2
+   guess_passwd       0.98      1.00      0.99        93
+     httptunnel       1.00      1.00      1.00         8
+           imap       1.00      1.00      1.00         2
+        ipsweep       1.00      0.99      1.00       816
+           land       0.57      1.00      0.73         4
+     loadmodule       0.33      0.50      0.40         2
+       mailbomb       1.00      1.00      1.00        19
+          mscan       0.95      0.95      0.95        62
+       multihop       0.00      0.00      0.00         3
+        neptune       1.00      1.00      1.00      9574
+           nmap       0.98      1.00      0.99       340
+         normal       1.00      1.00      1.00     15718
+            pod       0.92      1.00      0.96        47
+      portsweep       1.00      1.00      1.00       660
+   processtable       0.98      1.00      0.99        42
+        rootkit       0.00      0.00      0.00         3
+          saint       0.65      0.68      0.67        19
+          satan       0.98      0.99      0.98       866
+          smurf       1.00      1.00      1.00       637
+  snmpgetattack       0.28      0.78      0.41         9
+      snmpguess       0.87      1.00      0.93        20
+       teardrop       0.99      1.00      0.99       199
+    warezclient       0.99      1.00      0.99       199
+    warezmaster       0.90      0.95      0.93        60
+
+       accuracy                           1.00     29696
+      macro avg       0.82      0.87      0.83     29696
+   weighted avg       1.00      1.00      1.00     29696

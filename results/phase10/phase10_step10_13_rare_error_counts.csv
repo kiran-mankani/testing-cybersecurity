@@ -1,0 +1,8 @@
+actual_attack,targeted_predicted_attack,error_count
+ftp_write,normal,1
+loadmodule,normal,1
+multihop,warezmaster,2
+multihop,normal,1
+rootkit,satan,2
+rootkit,buffer_overflow,1
+snmpgetattack,normal,2

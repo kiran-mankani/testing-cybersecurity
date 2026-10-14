@@ -1,0 +1,11 @@
+actual_encoded,standard_prediction_encoded,targeted_prediction_encoded,standard_correct,targeted_correct,actual_attack,standard_predicted_attack,targeted_predicted_attack
+23,15,15,False,False,snmpgetattack,normal,normal
+23,15,15,False,False,snmpgetattack,normal,normal
+19,21,21,False,False,rootkit,satan,satan
+12,27,27,False,False,multihop,warezmaster,warezmaster
+12,15,15,False,False,multihop,normal,normal
+19,21,21,False,False,rootkit,satan,satan
+9,15,15,False,False,loadmodule,normal,normal
+3,15,15,False,False,ftp_write,normal,normal
+12,27,27,False,False,multihop,warezmaster,warezmaster
+19,2,2,False,False,rootkit,buffer_overflow,buffer_overflow

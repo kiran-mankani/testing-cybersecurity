@@ -1,0 +1,7 @@
+{
+    "model": "XGBClassifier",
+    "valid_class_count": 28,
+    "skipped_class_count": 0,
+    "macro_average_precision": 0.8412539420164462,
+    "weighted_average_precision": 0.9990810740297086
+}

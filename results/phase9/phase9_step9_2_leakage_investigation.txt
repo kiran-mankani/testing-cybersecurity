@@ -1,0 +1,11 @@
+PHASE 9 — STEP 9.2: DATA LEAKAGE INVESTIGATION
+Target-like feature columns: []
+Training duplicate feature rows: 10144
+Test duplicate feature rows: 589
+Unique training feature rows: 108639
+Unique test feature rows: 29107
+Matching row hashes across datasets: 5089
+Verified overlapping test rows: 5094
+Same feature names and order: True
+
+Note: These checks do not prove that the complete pipeline is leakage-free.

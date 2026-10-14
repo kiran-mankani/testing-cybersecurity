@@ -1,0 +1,22 @@
+{
+    "step": "9.8",
+    "validation_samples": 23757,
+    "baseline_metrics": {
+        "accuracy": 0.9974323357326261,
+        "balanced_accuracy": 0.7938086562159465,
+        "macro_precision": 0.8945359943372615,
+        "macro_recall": 0.7938086562159465,
+        "macro_f1": 0.8267374799436438
+    },
+    "weighted_metrics": {
+        "accuracy": 0.9963800143115713,
+        "balanced_accuracy": 0.9057208235871613,
+        "macro_precision": 0.9000906333614147,
+        "macro_recall": 0.9057208235871613,
+        "macro_f1": 0.8869017644368561
+    },
+    "normal_samples_misclassified_by_baseline": 9,
+    "normal_samples_misclassified_by_weighted": 49,
+    "final_test_set_used": false,
+    "status": "Class imbalance strategy comparison completed"
+}

@@ -1,0 +1,9 @@
+model,attack,precision,recall,f1,support
+Class-Weighted XGBoost,multihop,1.0,0.6666666666666666,0.8,3.0
+Class-Weighted XGBoost,rootkit,0.0,0.0,0.0,2.0
+Class-Weighted XGBoost,ftp_write,1.0,1.0,1.0,1.0
+Class-Weighted XGBoost,loadmodule,0.3333333333333333,1.0,0.5,2.0
+Class-Weighted XGBoost + Oversampling,multihop,1.0,0.6666666666666666,0.8,3.0
+Class-Weighted XGBoost + Oversampling,rootkit,0.0,0.0,0.0,2.0
+Class-Weighted XGBoost + Oversampling,ftp_write,1.0,1.0,1.0,1.0
+Class-Weighted XGBoost + Oversampling,loadmodule,0.6666666666666666,1.0,0.8,2.0

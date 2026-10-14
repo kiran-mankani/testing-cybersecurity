@@ -1,0 +1,9 @@
+model,attack,precision,recall,f1,support
+Standard class weighting,rootkit,0.0,0.0,0.0,2
+Standard class weighting,multihop,1.0,0.6666666666666666,0.8,3
+Standard class weighting,ftp_write,1.0,1.0,1.0,1
+Standard class weighting,loadmodule,0.3333333333333333,1.0,0.5,2
+Targeted rare-class weighting,rootkit,0.14285714285714285,0.5,0.2222222222222222,2
+Targeted rare-class weighting,multihop,1.0,0.6666666666666666,0.8,3
+Targeted rare-class weighting,ftp_write,1.0,1.0,1.0,1
+Targeted rare-class weighting,loadmodule,0.3333333333333333,1.0,0.5,2

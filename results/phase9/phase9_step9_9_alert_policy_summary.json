@@ -1,0 +1,26 @@
+{
+    "step": "9.9",
+    "analysis": "Threshold and alert policy simulation",
+    "model": "Class-Weighted XGBoost",
+    "validation_samples": 23757,
+    "mean_confidence": 0.9966611266136169,
+    "correct_predictions": 23671,
+    "incorrect_predictions": 86,
+    "default_metrics": {
+        "accuracy": 0.9963800143115713,
+        "balanced_accuracy": 0.9057208235871613,
+        "macro_precision": 0.9000906333614147,
+        "macro_recall": 0.9057208235871613,
+        "macro_f1": 0.8869017644368561
+    },
+    "thresholds_evaluated": [
+        0.5,
+        0.7,
+        0.9,
+        0.95,
+        0.99
+    ],
+    "final_test_set_used": false,
+    "real_network_traffic_blocked": false,
+    "status": "Threshold and alert policy analysis completed"
+}

@@ -1,0 +1,11 @@
+actual_attack,predicted_attack,correct_prediction
+rootkit,satan,False
+multihop,warezmaster,False
+multihop,normal,False
+ftp_write,ftp_write,True
+rootkit,satan,False
+loadmodule,normal,False
+ftp_write,normal,False
+multihop,warezmaster,False
+rootkit,buffer_overflow,False
+loadmodule,loadmodule,True

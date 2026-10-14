@@ -1,0 +1,17 @@
+File,Status,Size_KB
+phase5_feature_importance.csv,FOUND,1.08
+phase5_feature_importance_named.csv,FOUND,1.69
+phase5_feature_importance_weight.csv,FOUND,0.62
+phase5_feature_importance_gain.csv,FOUND,1.08
+phase5_feature_importance_cover.csv,FOUND,1.06
+phase5_feature_importance_total_gain.csv,FOUND,0.95
+phase5_feature_importance_top20.png,FOUND,105.14
+phase5_lime_individual_explanation.png,FOUND,115.25
+phase5_lime_individual_explanation.csv,FOUND,1.2
+phase5_lime_individual_explanation_named.csv,FOUND,1.56
+phase5_attack_class_analysis.csv,FOUND,1.32
+phase5_misclassified_records.csv,FOUND,1.58
+phase5_confusion_matrix.csv,FOUND,2.07
+phase5_confusion_matrix.png,FOUND,1331.95
+phase5_misclassification_patterns.csv,FOUND,0.69
+phase5_errors_by_actual_class.csv,FOUND,0.26

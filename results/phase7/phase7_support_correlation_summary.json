@@ -1,0 +1,26 @@
+{
+    "classes_analyzed": 28,
+    "rare_support_threshold": 100,
+    "weak_f1_threshold": 0.5,
+    "rare_weak_class_count": 3,
+    "correlations": [
+        {
+            "Metric": "Precision",
+            "Pearson_Support": 0.15463261716730142,
+            "Spearman_Support": 0.24056563262502262,
+            "Spearman_Log10_Support": 0.24056563262502262
+        },
+        {
+            "Metric": "Recall",
+            "Pearson_Support": 0.15833495396408687,
+            "Spearman_Support": 0.23498053581647943,
+            "Spearman_Log10_Support": 0.23498053581647943
+        },
+        {
+            "Metric": "F1_Score",
+            "Pearson_Support": 0.16460856727714987,
+            "Spearman_Support": 0.4221804096073355,
+            "Spearman_Log10_Support": 0.4221804096073355
+        }
+    ]
+}

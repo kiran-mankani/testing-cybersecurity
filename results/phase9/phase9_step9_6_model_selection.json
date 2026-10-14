@@ -1,0 +1,14 @@
+{
+    "phase": 9,
+    "step": "9.6",
+    "selection_method": "Highest validation macro F1; balanced accuracy used as tie-breaker",
+    "selected_candidate": "Class-Weighted XGBoost",
+    "selected_metrics": {
+        "macro_f1": 0.8869017644368561,
+        "balanced_accuracy": 0.9057208235871612,
+        "macro_recall": 0.9057208235871612
+    },
+    "selected_model_path": "D:\\smart-cybersecurity-ml\\models\\phase9_selected_xgboost_candidate.pkl",
+    "final_test_set_used_for_selection": false,
+    "status": "Selected for further validation"
+}

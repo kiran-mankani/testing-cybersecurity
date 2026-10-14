@@ -1,0 +1,10 @@
+Metric,Value
+Total_Samples,29696.0
+Mean_Confidence,0.9983659982681274
+Median_Confidence,0.9999880790710449
+Min_Confidence,0.40875810384750366
+Max_Confidence,0.9999973773956299
+Mean_Confidence_Correct,0.9988763332366943
+Mean_Confidence_Incorrect,0.7912572026252747
+Predictions_Above_90_Percent,29583.0
+Predictions_Below_60_Percent,26.0

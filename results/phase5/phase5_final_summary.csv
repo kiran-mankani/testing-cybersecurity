@@ -1,0 +1,7 @@
+Item,Result
+Attack classes analyzed,28
+Misclassified records,73
+Unique error patterns,36
+Feature importance,Completed
+LIME explanation,Completed
+SHAP,Blocked by Windows security policy

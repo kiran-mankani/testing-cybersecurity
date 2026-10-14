@@ -1,0 +1,2 @@
+model_object,feature_count,class_count,predict_available,predict_proba_available,overall_model_integrity
+True,True,True,True,True,True

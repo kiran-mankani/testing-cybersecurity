@@ -1,0 +1,4 @@
+class_id,class_name,precision,recall,f1_score,support,predicted_count
+3,ftp_write,0.0,0.0,0.0,2,0
+12,multihop,0.0,0.0,0.0,3,0
+19,rootkit,0.0,0.0,0.0,3,2

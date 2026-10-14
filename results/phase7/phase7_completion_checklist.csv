@@ -1,0 +1,12 @@
+Output,Status,Path
+Overall metrics,PASS,D:\smart-cybersecurity-ml\results\phase7\phase7_overall_metrics.json
+Per-class metrics,PASS,D:\smart-cybersecurity-ml\results\phase7\phase7_per_class_metrics.csv
+Classification report,PASS,D:\smart-cybersecurity-ml\reports\phase7\phase7_classification_report.txt
+Confusion matrix,MISSING,D:\smart-cybersecurity-ml\results\phase7\phase7_confusion_matrix.png
+ROC-AUC summary,MISSING,D:\smart-cybersecurity-ml\results\phase7\phase7_roc_auc_summary.json
+Precision-recall summary,MISSING,D:\smart-cybersecurity-ml\results\phase7\phase7_precision_recall_summary.json
+Confidence analysis,PASS,D:\smart-cybersecurity-ml\results\phase7\phase7_confidence_calibration_summary.json
+Support-performance analysis,PASS,D:\smart-cybersecurity-ml\results\phase7\phase7_support_correlation_summary.json
+Evaluation dashboard,PASS,D:\smart-cybersecurity-ml\results\phase7\phase7_evaluation_dashboard.png
+Dashboard class metrics,PASS,D:\smart-cybersecurity-ml\results\phase7\phase7_dashboard_class_metrics.csv
+Final evaluation report,PASS,D:\smart-cybersecurity-ml\reports\phase7\phase7_final_evaluation_report.md

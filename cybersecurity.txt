@@ -1,0 +1,975 @@
+python --version
+
+
+
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+nvidia-smi
+
+
+pip install torch
+
+
+
+python -c "import torch; print(torch.__version__)"
+
+
+da.is_available()); print('GPU:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'Not Available')"
+D:\smart-cybersecurity-ml\.venv\Lib\site-packages\torch\_subclasses\functional_tensor.py:368: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\torch\csrc\utils\tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+CUDA available: False
+GPU: Not Available
+(.venv) PS D:\smart-cybersecurity-ml>  
+
+
+gpu cpu kha use ho rha hai
+python -c "import torch; print('PyTorch:', torch.__version__); print('CUDA available:', torch.cuda.is_available()); print('CUDA version:', torch.version.cuda); print('GPU:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'Not Available')" 
+check the gpu
+
+
+installation ke process me jumne kiya kiya kis leye kiya kiya problem ahi usko kese solve kiya ye sub batao step by step me
+
+
+Phase 0 — Project Setup
+Project objective define karna
+Dataset understand karna
+VS Code environment setup
+Virtual environment banana
+Required libraries install karna
+Project folder structure banana
+
+
+
+
+Ab tak ki complete troubleshooting
+1. Python environment — ✅ FIXED
+Problem
+
+Initially humein ensure karna tha ke project ke liye separate Python environment ho.
+
+Tumhare system mein Python already installed tha:
+
+Python 3.13.7
+Humne kya kiya?
+
+Project folder:
+
+D:\smart-cybersecurity-ml
+
+ke andar command chalayi:
+
+python -m venv .venv
+
+Isse bana:
+
+smart-cybersecurity-ml/
+└── .venv/
+.venv kya hai?
+
+Ye project ka isolated Python environment hai.
+
+Is project ki libraries:
+
+numpy
+pandas
+scikit-learn
+torch
+...
+
+isi environment mein install hongi.
+
+Status
+Python       ✅
+.venv        ✅
+Activated    ✅
+
+Tumhare terminal mein:
+
+(.venv) PS D:\smart-cybersecurity-ml>
+
+aana iska proof hai.
+
+2. GPU / NVIDIA Driver — ✅ GOOD
+
+Humne command chalayi:
+
+nvidia-smi
+
+Aur output mein mila:
+
+NVIDIA GeForce RTX 3050
+6144 MiB
+Driver 610.74
+CUDA UMD 13.3
+Iska matlab?
+
+Tumhara actual GPU aur NVIDIA driver properly working hain.
+
+Windows
+   ↓
+NVIDIA Driver
+   ↓
+RTX 3050 6GB
+Problem thi?
+
+❌ GPU hardware ki problem nahi thi.
+
+GPU bilkul theek tha.
+
+3. NumPy missing — ❌ → ✅ FIXED
+
+Jab pehli baar PyTorch test kiya to error aaya:
+
+UserWarning: Failed to initialize NumPy:
+No module named 'numpy'
+Problem
+
+.venv mein NumPy installed nahi tha.
+
+PyTorch NumPy ke saath interact kar sakta hai, isliye warning aa rahi thi.
+
+Humne fix kiya:
+python -m pip install numpy
+
+Result:
+
+Successfully installed numpy-2.5.2
+
+Phir verify:
+
+NumPy: 2.5.2
+Status
+NumPy ✅ FIXED
+4. Sabse important problem — CPU-only PyTorch ❌
+
+Pehle tumhare system mein tha:
+
+PyTorch: 2.13.0+cpu
+
+Ye important tha.
+
++cpu ka matlab?
+
+PyTorch ka ye version CPU-only build tha.
+
+Yani:
+
+RTX 3050
+    ↓
+NVIDIA Driver ✅
+    ↓
+PyTorch
+    ↓
+CPU-only ❌
+
+Isliye jab humne check kiya:
+
+CUDA available: False
+CUDA version: None
+GPU: Not Available
+Matlab GPU kharab tha?
+
+Nahi.
+
+Problem PyTorch installation mein thi.
+
+5. CPU-only PyTorch remove kiya — ✅
+
+Humne:
+
+python -m pip uninstall torch -y
+
+chalaya.
+
+Output:
+
+Successfully uninstalled torch-2.13.0
+
+Ab old CPU-only PyTorch remove ho gaya.
+
+6. CUDA-enabled PyTorch install kiya — ✅
+
+Phir humne ye install kiya:
+
+python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+
+Iska purpose tha CUDA-enabled PyTorch install karna.
+
+Installation successful hui:
+
+Successfully installed
+
+torch-2.11.0+cu128
+torchvision-0.26.0+cu128
+torchaudio-2.11.0+cu128
++cu128 kya hai?
+cu128
+  ↓
+CUDA 12.8
+
+Yani ab PyTorch ke paas NVIDIA CUDA support wala build hai.
+
+Pehle:
+
+2.13.0+cpu
+
+❌
+
+Ab:
+
+2.11.0+cu128
+
+✅
+
+7. .venv-1 — ⚠️ Duplicate environment
+
+VS Code mein tumhe ye dikh raha hai:
+
+smart-cybersecurity-ml
+│
+├── .venv
+└── .venv-1
+.venv
+
+Ye hamara actual environment hai.
+
+Ismein humne install kiya:
+
+NumPy
+PyTorch CUDA
+torchvision
+torchaudio
+
+Isliye:
+
+.venv → KEEP ✅
+.venv-1
+
+Ye second environment hai.
+
+Lekin abhi tak humne .venv-1 ko use nahi kiya.
+
+Tumhare terminal ka:
+
+(.venv) PS D:\smart-cybersecurity-ml>
+
+prove karta hai ke currently .venv active hai.
+
+Important
+
+.venv-1 ko abhi immediately delete nahi karna.
+
+Pehle hum verify karenge ke VS Code/Python kahin usko use to nahi kar raha.
+
+8. Ye error bhi aaya tha
+
+Tumhare output mein:
+
+/d:/smart-cybersecurity-ml/.venv-1/Scripts/python.exe
+
+wali command par error aaya:
+
+The term ... is not recognized
+Kyun?
+
+PowerShell Windows path ko is form mein execute nahi karta:
+
+/d:/...
+
+Ye proper Windows PowerShell executable path nahi tha.
+
+Aur sabse important:
+
+Tumhe .venv-1 use karne ki zaroorat bhi nahi thi.
+
+Humari correct environment:
+
+D:\smart-cybersecurity-ml\.venv\
+
+hai.
+
+9. Pip update notification — ⚠️ Problem nahi
+
+Tumhe repeatedly ye dikha:
+
+[notice] A new release of pip is available:
+25.2 -> 26.2.1
+
+Ye error nahi hai.
+
+Ye sirf notification hai.
+
+pip 25.2
+   ↓
+newer version available
+
+Project ko abhi iski wajah se koi problem nahi.
+
+Status
+❌ Error nahi
+⚠️ Optional update
+
+Abhi hum isko ignore kar sakte hain.
+
+📊 Overall Status
+Component	Pehle	Ab
+Python	3.13.7	✅ Correct
+Virtual Environment	Needed	✅ .venv
+.venv activation	Needed	✅ Active
+NVIDIA GPU	RTX 3050	✅ Detected
+VRAM	6 GB	✅ Detected
+NVIDIA Driver	610.74	✅ Working
+NumPy	Missing ❌	✅ 2.5.2
+PyTorch	CPU-only ❌	✅ CUDA build installed
+PyTorch	2.13.0+cpu	✅ 2.11.0+cu128
+CUDA in PyTorch	None ❌	✅ CUDA 12.8 build
+.venv-1	Duplicate	⚠️ Verify/remove later
+pip notification	—	⚠️ Not an error
+🔥 Sabse important difference
+Pehle system:
+RTX 3050
+   ↓
+NVIDIA Driver ✅
+   ↓
+PyTorch 2.13.0+cpu ❌
+   ↓
+CUDA = False ❌
+Ab system:
+RTX 3050
+   ↓
+NVIDIA Driver 610.74 ✅
+   ↓
+PyTorch 2.11.0+cu128 ✅
+   ↓
+CUDA 12.8 support ✅
+   ↓
+GPU training possible ✅
+
+
+
+
+
+
+| Problem                       | Kya hua                                                       | Humne kaise solve kiya                                        | Status         |
+| ----------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | -------------- |
+| `.venv` / `.venv-1` confusion | Do virtual environments ban gaye the                          | Working `.venv` rakha, `.venv-1` remove kiya                  | ✅ Solved       |
+| PyTorch import issue          | `import torch` ke waqt DLL load hone mein process stuck hua   | Process ko interrupt kiya aur dobara PyTorch import test kiya | ✅ Solved       |
+| `KeyboardInterrupt`           | `torch` load hote waqt command manually interrupt ho gayi thi | Dobara `import torch` test kiya                               | ✅ Solved       |
+| PyTorch installation          | PyTorch properly installed hai ya nahi confirm nahi tha       | `python -c "import torch; print(torch.__version__)"` chalaya  | ✅ Solved       |
+| PyTorch version               | Version verify ki                                             | `2.11.0+cu128` mila                                           | ✅ Confirmed    |
+| CUDA support                  | CUDA available hai ya nahi check kiya                         | `torch.cuda.is_available()` run kiya                          | ✅ `True`       |
+| GPU detection                 | GPU detect ho raha hai ya nahi check kiya                     | `torch.cuda.get_device_name(0)` run kiya                      | ✅ RTX 3050 6GB |
+| GPU count                     | Kitni GPUs available hain check ki                            | `torch.cuda.device_count()` run kiya                          | ✅ `1`          |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Installed Libraries — Complete Summary
+
+
+
+
+
+
+
+| #  | Library              | Kya kaam karti hai?                      | Tumhare Cybersecurity Project mein kaise use hogi?                                                           |
+| -- | -------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| 1  | **NumPy**            | Numerical calculations aur arrays        | Dataset ke numerical features, mathematical operations aur ML preprocessing mein support karegi              |
+| 2  | **Pandas**           | Tables/DataFrames ke saath data handling | `kdd_train.csv` / `kdd_test.csv` load, inspect, clean aur transform karne ke liye                            |
+| 3  | **Matplotlib**       | Graphs/visualization                     | Attack distribution, feature distributions, model performance graphs banane ke liye                          |
+| 4  | **Seaborn**          | Statistical visualization                | Class imbalance, correlation heatmap, boxplots, distributions aur EDA ke liye                                |
+| 5  | **Scikit-learn**     | Traditional Machine Learning             | Preprocessing, train/test split, ML models, metrics aur evaluation ke liye                                   |
+| 6  | **imbalanced-learn** | Imbalanced datasets handle karna         | **Enhancement 1:** SMOTE, oversampling etc. se rare attack classes ko handle karne ke liye                   |
+| 7  | **Jupyter**          | Interactive notebooks                    | EDA, preprocessing experiments aur ML experiments ko step-by-step run/document karne ke liye                 |
+| 8  | **PyTorch**          | Deep Learning / GPU ML                   | **Advanced ML/Deep Learning** experiments ko RTX 3050 GPU par train karne ke liye                            |
+| 9  | **torchvision**      | Computer-vision utilities/models         | Current tabular project mein major role nahi; future compatible PyTorch ecosystem ke liye installed          |
+| 10 | **torchaudio**       | Audio processing                         | **Is cybersecurity tabular project mein currently required nahi**; PyTorch installation ke saath install hua |
+
+
+
+
+
+
+
+
+
+
+Phase 1 — Data Understanding
+Dataset load karna
+Train/Test datasets samajhna
+Dataset shape check karna
+Columns/features identify karna
+Target column identify karna
+Data types check karna
+Missing values check karna
+Duplicate records check karna
+Unique values check karna
+Target/class distribution check karna
+Numerical vs categorical features identify karna
+
+
+
+
+
+
+
+
+
+
+
+
+
+📊 Tumhara Dataset Kaisa Tha?
+
+Tumhara dataset KDD / NSL-KDD type network intrusion dataset hai, jisme network connections/traffic ke records hain.
+
+Iska purpose:
+
+Network traffic ke features ko dekh kar predict karna ke traffic normal hai ya kis type ka attack hai.
+
+Tumhare paas 2 datasets hain:
+
+kdd_train.csv
+kdd_test.csv
+Dataset Size
+Dataset	Records	Columns
+Train	125,973	42
+Test	22,544	42
+
+Total records:
+
+148,517
+
+Aur:
+
+42 columns
+= 41 input features + 1 target
+
+Target:
+
+labels
+🔎 Phase 1 ke 17 Steps Mein Humne Kya Dekha?
+Step 7 — Dataset Load Karna ✅
+
+Humne CSV files ko Pandas mein load kiya:
+
+train_df
+test_df
+Humne kya seekha?
+
+Dataset successfully Python mein aa gaya aur ab hum analysis kar sakte hain.
+
+Aage kya karna hai?
+
+❌ Kuch fix nahi.
+
+Dataset successfully load ho raha hai.
+
+Step 8 — Train/Test Dataset Samajhna ✅
+
+Humne samjha:
+
+Train
+125,973 records
+
+Model ko patterns seekhne ke liye.
+
+Test
+22,544 records
+
+Trained model ko unseen data par evaluate karne ke liye.
+
+Aage kya dhyan rakhna hai?
+
+⚠️ Test data ko training ke andar use nahi karna.
+
+Ye data leakage avoid karne ke liye important hai.
+
+Step 9 — Dataset Shape Check ✅
+
+Humne check kiya:
+
+Train = (125973, 42)
+Test  = (22544, 42)
+
+Yani:
+
+Train → 125,973 rows × 42 columns
+Test  → 22,544 rows × 42 columns
+Aage kya?
+
+❌ Shape mein koi problem nahi.
+
+Bas documentation/report mein ye numbers mention karenge.
+
+Step 10 — Columns / Features Identify ✅
+
+Humne dataset ke 42 columns identify kiye.
+
+Examples:
+
+duration
+protocol_type
+service
+flag
+src_bytes
+dst_bytes
+...
+labels
+
+Ye features network connection ke different characteristics represent karte hain.
+
+Aage kya?
+
+⚠️ Hume determine karna hoga:
+
+kaunse features useful hain
+kaunse redundant hain
+kaunse low-variance hain
+kaunse model ke liye problematic ho sakte hain
+
+Ye later preprocessing/feature engineering mein hoga.
+
+Step 11 — Target Column Identify ✅
+
+Humne identify kiya:
+
+Target = labels
+
+Yahi woh value hai jo model predict karega.
+
+Tumhare dataset mein:
+
+23 different labels/classes
+
+hain.
+
+Aage kya?
+
+labels ko input feature ke andar nahi dena.
+
+Model:
+
+Features
+   ↓
+ML Model
+   ↓
+labels
+Step 12 — Data Types Check ✅
+
+Humne dekha:
+
+Numerical = 38
+Categorical = 4
+
+Categorical:
+
+protocol_type
+service
+flag
+labels
+
+Lekin labels target hai.
+
+Actual input:
+
+38 numerical
++
+3 categorical
+=
+41 input features
+⚠️ Aage kya set karna hai?
+
+ML algorithms normally raw text directly nahi samajhte.
+
+For example:
+
+protocol_type
+
+tcp
+udp
+icmp
+
+Inko numerical representation mein convert karna hoga.
+
+Ye encoding ke through hoga.
+
+Step 13 — Missing Values Check ✅
+
+Result:
+
+Train = 0
+Test  = 0
+Meaning
+
+Dataset mein missing/null values nahi hain.
+
+Aage kya?
+
+✅ Missing values ke liye imputation ki zarurat nahi.
+
+Yani:
+
+NaN filling
+mean/median filling
+row deletion
+
+ki zarurat is dataset ke current state mein nahi.
+
+Step 14 — Duplicate Records Check ✅
+
+Result:
+
+Train = 0
+Test  = 31
+Meaning
+
+Train mein:
+
+0 duplicates
+
+Test mein:
+
+31 duplicates
+⚠️ Aage kya?
+
+31 duplicates ko abhi delete nahi karna.
+
+Hum preprocessing mein decide karenge ke test duplicates ko remove karna appropriate hai ya nahi.
+
+Important point:
+
+Duplicate check ho chuka hai, lekin cleaning decision abhi pending hai.
+
+Step 15 — Unique Values Check ✅
+
+Humne har column ki unique values dekhi.
+
+Important findings:
+
+labels = 23 unique values
+
+Aur:
+
+num_outbound_cmds = 1 unique value
+⚠️ Ye important hai
+
+Agar kisi feature mein sirf ek hi value hai, to woh model ko useful information nahi deta.
+
+Example:
+
+num_outbound_cmds
+
+1
+1
+1
+1
+1
+...
+
+Is feature mein variation nahi hai.
+
+Aage kya?
+
+Later:
+
+Low-variance / constant feature handling
+
+karna hoga.
+
+Potentially num_outbound_cmds ko remove kiya ja sakta hai, but pehle preprocessing/feature analysis mein confirm karenge.
+
+Step 16 — Target/Class Distribution ✅
+
+Ye tumhare project ka bahut important finding tha.
+
+Tumhare 23 classes:
+
+normal             67,343
+neptune            41,214
+satan                3,633
+ipsweep              3,599
+portsweep            2,931
+smurf                2,646
+...
+spy                      2
+🔴 Problem: Severe Class Imbalance
+
+Example:
+
+normal → 67,343
+neptune → 41,214
+spy → 2
+perl → 3
+phf → 4
+
+Ye bahut strong imbalance hai.
+
+⚠️ Aage kya karna hai?
+
+Ye directly tumhare:
+
+Enhancement 1 — Solve Class Imbalance
+
+se related hai.
+
+Later hum investigate karenge:
+
+class balancing
+appropriate resampling strategy
+class weights
+minority-class evaluation
+appropriate metrics
+
+⚠️ Sirf accuracy par depend nahi karna chahiye.
+
+Step 17 — Numerical vs Categorical Features ✅
+
+Final result:
+
+Numerical features = 38
+Categorical inputs  = 3
+Target              = 1
+Categorical inputs:
+protocol_type
+service
+flag
+Target:
+labels
+⚠️ Aage kya?
+
+Categorical inputs ko encode karna hoga.
+
+For example:
+
+protocol_type
+tcp
+udp
+icmp
+
+ko ML-compatible numerical representation mein convert karna.
+
+🧠 Ab Overall Dataset Ki Health Dekho
+
+| Finding              | Status    | Aage kya?                                |
+| -------------------- | --------- | ---------------------------------------- |
+| Dataset loading      | ✅ Good    | Nothing                                  |
+| Train/Test available | ✅ Good    | Leakage avoid karni                      |
+| Shape                | ✅ Good    | Nothing                                  |
+| 42 columns           | ✅         | Feature analysis                         |
+| 41 input features    | ✅         | Preprocessing                            |
+| Target = `labels`    | ✅         | Separate target                          |
+| Missing values       | **0** ✅   | Nothing                                  |
+| Train duplicates     | **0** ✅   | Nothing                                  |
+| Test duplicates      | **31** ⚠️ | Later decision                           |
+| 23 classes           | ⚠️        | Multiclass handling                      |
+| Constant feature     | ⚠️        | Check/remove later                       |
+| Categorical features | ⚠️        | Encoding                                 |
+| Class imbalance      | 🔴 Major  | **Enhancement 1**                        |
+| Numerical features   | 38        | Scaling may be needed depending on model |
+| Categorical features | 3         | Encoding required                        |
+🚨 Sabse Important: Aage Hume Kya-Kya Set Karna Hai?
+
+Tumhare dataset ko ML-ready banane ke liye roughly ye issues hain:
+
+1. Categorical Encoding ⚠️
+protocol_type
+service
+flag
+
+Raw text → numerical representation.
+
+2. Constant / Low-Variance Features ⚠️
+
+Example:
+
+num_outbound_cmds
+
+Sirf 1 unique value mila.
+
+Isko further analyze karke potentially remove karenge.
+
+3. Duplicate Handling ⚠️
+
+Test mein:
+
+31 duplicates
+
+hain.
+
+Cleaning strategy decide karni hogi.
+
+4. Class Imbalance 🔴
+
+Sabse major issue.
+
+normal = 67,343
+spy = 2
+
+Isko carefully handle karna hoga.
+
+Ye tumhare Enhancement 1 ka core part hai.
+
+5. Feature Scaling ⚠️
+
+Tumhare numerical features ke scales different hain.
+
+Example:
+
+duration
+src_bytes
+dst_bytes
+rates
+count
+
+kuch values small hain aur kuch bahut large ho sakti hain.
+
+Certain algorithms ke liye scaling useful/necessary hogi.
+
+6. Feature Engineering ⚠️
+
+Later hum investigate kar sakte hain:
+
+existing features
+       ↓
+feature analysis
+       ↓
+useful features
+       ↓
+new/derived features
+
+Ye model performance improve karne mein help kar sakta hai.
+
+7. Target Strategy 🔥
+
+Tumhare paas 23 classes hain.
+
+Isliye tumhara project simple:
+
+Normal vs Attack
+
+tak limited nahi hai.
+
+Tum multiclass attack classification bhi kar sakti ho:
+
+normal
+neptune
+satan
+ipsweep
+portsweep
+...
+spy
+
+Aur later severity/response enhancement ke liye attack classes ko severity levels se map kar sakti ho.
+
+🎯 Tumhare Project ka Phase 1 Final Conclusion
+
+Agar report mein likhna ho to simple conclusion:
+
+The dataset contains 125,973 training records and 22,544 testing records, with 42 columns consisting of 41 input features and one target label. The dataset contains 38 numerical features and three categorical input features. No missing values were found. The training set contains no duplicate records, while the test set contains 31 duplicate records. The target variable contains 23 classes with significant class imbalance, particularly between majority classes such as normal and neptune and extremely rare classes such as spy, perl, and phf. Categorical encoding, duplicate handling, constant-feature analysis, feature scaling, and class-imbalance handling will therefore be important in the subsequent preprocessing phase.
+
+🔥 Aur tumhare project ke hisaab se sabse important 4 findings:
+
+1. Class imbalance → Enhancement 1
+2. Features/behaviour data → Enhancement 2 (Explainable AI)
+3. 23 attack classes → Enhancement 3 (Severity + Response)
+4. Same prepared data → Enhancement 4 (Traditional ML vs Advanced ML comparison)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abstract:
+The growing complexity and advancement of the modern cyberattacks have proven the insecurity of the old-fashioned cybersecurity tools, in the form of firewall and signature-based intrusion detecting tools. Evolution of advanced protracted threats, phishing, ransomware and constantly-changing malware has made a sort of a defensive strategy rather useless. Artificial Intelligence (AI), specifically, the use of Machine Learning (ML), and Deep Learning (DL) in the real-time detection, classification, and reduction of cyber threats is more dynamic and reactive in this instance. The article discusses the application of AI to cybersecurity and machine learning techniques of intrusion detection, anomaly detection, phishing detection and malware classification in particular. It incorporates the in-depth analysis of the existing methods and provides an AI-based cybersecurity framework that would assist in enhancing the process of threats detection. The experimental evaluations are done using the benchmark datasets such as NSL-KDD and CICIDS2017 to compare the performance of different approaches. Other critical issues that are discussed in the study are adversarial attacks on machine learning models, lack of explainability, and data imbalance issues. Lastly, it highlights research directions in the future with a focus on Explainable AI and Federated Learning, and quantum-enabled security systems in enhancing next-generation cybersecurity infrastructures.
+
+Enhancement 1 — Solve class imbalance 
+Enhancement 2 — Add Explainable AI  - behaviour
+Enhancement 3 — Add attack severity / response 
+Enhancement 4 — Compare traditional ML vs advanced ML 
+
+
+# hase 2 — Exploratory Data Analysis
+
+18. Target distribution visualization
+19. Attack classes visualization
+20. Numerical feature distributions
+21. Categorical feature analysis
+22. Outlier analysis
+23. Correlation analysis
+24. Feature relationships
+25. Important patterns identify karna
+26. Normal vs attack behaviour analyze karna
+
+Yahan hum ye samajhne ki koshish karenge:
+
+> **Normal network traffic aur attack traffic mein actual behavioural difference kya hai? abh yhe krwao step by step sath me file bhi batao kis file me jana hai aur ye batao datatset jab set krte hai usko kiya bolte hai jese missing value feature set hongy step bt step krwao jb complete hojai tab batana mera data set excel me hai aur kis location me ha vo b hi check kare aur code se phaly jheading to sub har cell ki description ho**
+>
+>data un derstanding done hogae hai
+The dataset contains 125,973 training records and 22,544 testing records, with 42 columns consisting of 41 input features and one target label. The dataset contains 38 numerical features and three categorical input features. No missing values were found. The training set contains no duplicate records, while the test set contains 31 duplicate records. The target variable contains 23 classes with significant class imbalance, particularly between majority classes such as normal and neptune and extremely rare classes such as spy, perl, and phf. Categorical encoding, duplicate handling, constant-feature analysis, feature scaling, and class-imbalance handling will therefore be important in the subsequent preprocessing phase.
+
+
+
+

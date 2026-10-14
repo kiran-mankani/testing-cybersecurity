@@ -1,0 +1,11 @@
+{
+    "step": "9.7",
+    "model": "Class-Weighted XGBoost",
+    "validation_samples": 23757,
+    "correct_predictions": 23671,
+    "incorrect_predictions": 86,
+    "accuracy": 0.9963800143115713,
+    "balanced_accuracy": 0.9057208235871613,
+    "final_test_set_used": false,
+    "status": "Validation error analysis completed"
+}
