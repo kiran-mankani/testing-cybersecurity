@@ -18,3 +18,16 @@ data/processed/cicids2017_clean.parquet
 
 # Python cache
 *.pyc
+# Local environment secrets
+.env
+.env.*
+!.env.example
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Local database files and logs
+*.sqlite
+*.sqlite3
+*.db
+*.log

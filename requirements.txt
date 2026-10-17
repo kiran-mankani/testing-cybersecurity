@@ -1,0 +1,15 @@
+﻿numpy
+pandas
+scikit-learn
+xgboost
+joblib
+imbalanced-learn
+fastapi
+uvicorn[standard]
+pymongo
+python-dotenv
+streamlit
+requests
+plotly
+pytest
+httpx

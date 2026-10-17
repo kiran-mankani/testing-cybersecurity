@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Global Background */
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif;
+    background-color: #0b1120 !important;
+}
+
+/* Hide default Streamlit paddings and menus */
+#MainMenu {visibility: hidden;}
+header {visibility: hidden;}
+footer {visibility: hidden;}
+.block-container { padding-top: 1rem !important; padding-bottom: 0rem !important; max-width: 98% !important; }
+
+/* --- SIDEBAR DESIGN --- */
+[data-testid="stSidebar"] {
+    background-color: #0f172a !important;
+    border-right: 1px solid #1e293b;
+}
+.sidebar-btn {
+    display: block;
+    padding: 12px 15px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: 0.2s;
+}
+.sidebar-btn:hover {
+    background-color: #1e293b;
+    color: white;
+}
+.sidebar-btn.active {
+    background-color: #1e3a8a;
+    color: white;
+    font-weight: 600;
+}
+
+/* --- CARDS & BOXES --- */
+.dark-card {
+    background-color: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+/* --- CUSTOM INPUTS & SELECTS --- */
+.custom-label {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-bottom: 5px;
+    display: block;
+}
+.custom-input {
+    width: 100%;
+    background-color: #0b1120;
+    border: 1px solid #1f2937;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+.custom-input:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+/* --- BUTTONS --- */
+.btn-predict {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+    font-size: 15px;
+}
+.btn-predict:hover { background-color: #1d4ed8; }
+
+.btn-reset {
+    background-color: transparent;
+    color: #cbd5e1;
+    border: 1px solid #374151;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+    font-size: 15px;
+}
+.btn-reset:hover { background-color: #1f2937; }
+
+/* --- PROGRESS BARS --- */
+.progress-bg {
+    background-color: #1f2937;
+    border-radius: 6px;
+    height: 8px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.progress-fill {
+    height: 100%;
+    border-radius: 6px;
+}
