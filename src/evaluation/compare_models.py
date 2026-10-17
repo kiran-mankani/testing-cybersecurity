@@ -84,7 +84,7 @@ def oversample(X, y, target=OVERSAMPLE_TO, seed=42):
     return X.iloc[idx], y[idx]
 
 
-def fit_model(name, X, y, class_names):
+def fit_model(name, X, y, class_names, multipliers=TARGETED_MULTIPLIERS):
     model = XGBClassifier(num_class=len(class_names), **XGB_PARAMS)
     if name == "Original XGBoost":
         X_os, y_os = oversample(X, y)
@@ -92,7 +92,7 @@ def fit_model(name, X, y, class_names):
 
     weights = compute_sample_weight("balanced", y)
     if name == "Targeted Weighted XGBoost":
-        for attack, mult in TARGETED_MULTIPLIERS.items():
+        for attack, mult in multipliers.items():
             # ftp_write has only 9 unique rows, so deduplication drops it
             if attack in class_names:
                 weights[y == list(class_names).index(attack)] *= mult

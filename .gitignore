@@ -1,0 +1,20 @@
+# Python environment
+.venv/
+venv/
+__pycache__/
+
+# Research datasets
+data/raw/
+data/processed/
+
+# Generated ML models
+models/*.pkl
+
+# Generated results
+results/
+
+data/raw/cicids2017_download/
+data/processed/cicids2017_clean.parquet
+
+# Python cache
+*.pyc
