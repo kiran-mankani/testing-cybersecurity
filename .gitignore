@@ -19,3 +19,5 @@ data/processed/cicids2017_clean.parquet
 
 # Python cache
 *.pyc
+# CICIDS2017 models saved by predict_cicids2017.py
+models/cicids2017/*.pkl
