@@ -1,6 +1,6 @@
 """Request/response models. Field names and order match the 40 model features
 (NSL-KDD minus the constant num_outbound_cmds)."""
-from typing import Annotated, List
+from typing import Annotated, List, Optional, Union
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -67,6 +67,18 @@ class ClassProbability(BaseModel):
     probability: float
 
 
+class FeatureContribution(BaseModel):
+    feature: str
+    value: Union[float, str]
+    contribution: float
+
+
+class Explanation(BaseModel):
+    method: str = "TreeSHAP (XGBoost pred_contribs), log-odds of the predicted class"
+    base_value: float
+    features: List[FeatureContribution]
+
+
 class Prediction(BaseModel):
     predicted_class: str
     confidence: float
@@ -80,6 +92,7 @@ class Prediction(BaseModel):
     severity: str
     response: str
     warnings: List[str]
+    explanation: Optional[Explanation] = None
 
 
 class PredictResponse(BaseModel):

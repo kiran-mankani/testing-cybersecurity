@@ -42,10 +42,10 @@ def _documents(records, predictions, source):
     ]
 
 
-def _run(records, store, source):
+def _run(records, store, source, explain=False):
     _require_model()
     try:
-        predictions, elapsed_ms = service.predict(records)
+        predictions, elapsed_ms = service.predict(records, explain=explain)
     except ModelNotLoaded as exc:
         raise HTTPException(status_code=503, detail=str(exc))
     stored = database.save_predictions(_documents(records, predictions, source)) if store else 0
@@ -97,8 +97,9 @@ def model_performance():
 
 
 @app.post("/predict", response_model=PredictResponse)
-def predict(features: ConnectionFeatures, store: bool = True, source: str = "form"):
-    predictions, elapsed_ms, stored = _run([features.model_dump()], store, source)
+def predict(features: ConnectionFeatures, store: bool = True, source: str = "form",
+            explain: bool = True):
+    predictions, elapsed_ms, stored = _run([features.model_dump()], store, source, explain)
     return {"prediction": predictions[0], "model": service.metadata["model_name"],
             "elapsed_ms": elapsed_ms, "stored": stored == 1}
 

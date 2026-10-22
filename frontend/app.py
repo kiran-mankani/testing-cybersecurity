@@ -110,6 +110,8 @@ def show_result(pred, elapsed_ms=None, stored=None):
                  range_x=[0, 1], height=230)
     fig.update_layout(margin=dict(l=0, r=10, t=10, b=0), xaxis_title="Probability", yaxis_title=None)
     st.plotly_chart(fig, width="stretch")
+    if pred.get("explanation"):
+        show_explanation(pred)
     for w in pred["warnings"]:
         st.warning(w)
     notes = []
@@ -119,6 +121,34 @@ def show_result(pred, elapsed_ms=None, stored=None):
         notes.append("saved to MongoDB" if stored else "not saved (MongoDB offline)")
     if notes:
         st.caption(" · ".join(notes))
+
+
+def show_explanation(pred):
+    exp = pred["explanation"]
+    cls = pred["predicted_class"]
+    st.subheader("Why this prediction (XAI)")
+    st.caption(f"SHAP values for the class **{cls}**: red bars pushed the model towards "
+               f"{cls}, blue bars pushed it away. Units are log-odds; the bars plus the base "
+               f"value ({exp['base_value']:.2f}) add up to the model's raw score for {cls}.")
+    df = pd.DataFrame(exp["features"])
+    df["label"] = [f"{f} = {v:g}" if isinstance(v, (int, float)) else f"{f} = {v}"
+                   for f, v in zip(df["feature"], df["value"])]
+    df["direction"] = ["towards " + cls if c > 0 else "away from " + cls for c in df["contribution"]]
+    fig = px.bar(df[::-1], x="contribution", y="label", orientation="h", color="direction",
+                 color_discrete_map={"towards " + cls: "#d62728", "away from " + cls: "#1f77b4"},
+                 text_auto=".2f", height=40 + 32 * len(df))
+    fig.update_layout(margin=dict(l=0, r=10, t=10, b=0), xaxis_title="SHAP contribution (log-odds)",
+                      yaxis_title=None, legend_title=None,
+                      legend=dict(orientation="h", y=1.02, yanchor="bottom"))
+    st.plotly_chart(fig, width="stretch")
+    drivers = df[df["contribution"] > 0].head(3)
+    if len(drivers):
+        what = "attack" if pred["classifier_says_attack"] else "classification"
+        st.markdown(f"**Main features behind the {cls} {what}:** "
+                    + ", ".join(f"`{l}`" for l in drivers["label"]))
+    if pred["verdict"] == "Anomaly":
+        st.info("The alert here comes from the Isolation Forest, not the classifier. "
+                "The chart above explains the classifier's 'normal' prediction only.")
 
 
 # ---------------------------------------------------------------- pages

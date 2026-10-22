@@ -9,6 +9,7 @@ import time
 import joblib
 import numpy as np
 import pandas as pd
+import xgboost as xgb
 
 from backend import config
 
@@ -32,6 +33,7 @@ RESPONSE_MAPPING = {
     "Critical": "Immediate Response",
 }
 TOP_K = 5
+TOP_FEATURES = 10
 
 
 class ModelNotLoaded(RuntimeError):
@@ -75,7 +77,29 @@ class ModelService:
             X[col] = codes.fillna(-1).astype(int)
         return X.astype(float), warnings
 
-    def predict(self, records):
+    def _explain(self, X, class_idx):
+        """Exact TreeSHAP values (XGBoost pred_contribs) for each row's predicted class.
+
+        Values are in log-odds (margin) units: positive pushes towards the predicted
+        class, negative away from it. They sum with the bias to the class's raw score.
+        """
+        contribs = self.bundle["model"].get_booster().predict(xgb.DMatrix(X), pred_contribs=True)
+        names = self.bundle["feature_names"]
+        out = []
+        for i, k in enumerate(class_idx):
+            row = contribs[i, k]
+            values, bias = row[:-1], row[-1]
+            order = np.argsort(np.abs(values))[::-1][:TOP_FEATURES]
+            out.append({
+                "base_value": float(bias),
+                "features": [
+                    {"feature": names[j], "value": X.iat[i, j], "contribution": float(values[j])}
+                    for j in order
+                ],
+            })
+        return out
+
+    def predict(self, records, explain=False):
         if not self.ready:
             raise ModelNotLoaded(self.error)
         start = time.perf_counter()
@@ -86,6 +110,7 @@ class ModelService:
         meta = self.bundle["metadata"]
         scores = detector.score(X)
         anomalous = scores > meta["if_threshold"]
+        explanations = self._explain(X, proba.argmax(axis=1)) if explain else None
         elapsed_ms = (time.perf_counter() - start) * 1000
 
         results = []
@@ -119,4 +144,9 @@ class ModelService:
                 "response": RESPONSE_MAPPING[severity],
                 "warnings": warnings[i],
             })
+            if explanations:
+                # Show the raw (pre-encoding) value for categorical features.
+                for f in explanations[i]["features"]:
+                    f["value"] = records[i][f["feature"]] if f["feature"] in self.bundle["encoders"]                         else float(f["value"])
+                results[-1]["explanation"] = explanations[i]
         return results, elapsed_ms
